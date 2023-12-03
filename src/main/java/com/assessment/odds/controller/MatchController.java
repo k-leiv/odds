@@ -44,6 +44,8 @@ public class MatchController {
 
     @DeleteMapping(value = "/{id}")
     public void deleteMatch(@PathVariable Long id) {
+        List<Odds> odds = oddsService.getByMatchId(id);
+        oddsService.deleteOdds(odds);
         matchService.deleteMatch(id);
     }
 

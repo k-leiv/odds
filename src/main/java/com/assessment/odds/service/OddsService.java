@@ -32,4 +32,8 @@ public class OddsService {
     public List<Odds> getByMatchId(Long matchId) {
         return oddsRepository.findByMatchId(matchId);
     }
+
+    public void deleteOdds(List<Odds> odds) {
+        oddsRepository.deleteAll(odds);
+    }
 }
